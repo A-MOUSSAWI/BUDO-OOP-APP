@@ -1,35 +1,36 @@
 <?php
 session_start();
 require_once('../../private/initialize.php');
+include(SHARED_PATH . '/header.php');
 
+$title= "LogIn";
 $email = '';
 $password = '';
-
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    if ($admin = Admin::find_by_email($email)) {
+    if ($admin = Admin::find_email($email)) {
 
-        if ($admin != false && $admin->verify_password($password)) {
-            $admin == true;
 
-            //df($admin->verify_password($password));
+        if ($admin->verify_password($password)) {
+
             $_SESSION['user_id'] = $admin->id;
             $_SESSION['admin_name'] = $admin->firstname;
             $_SESSION['admin_id'] = $admin->id;
-            redirect_to('index2.php');
+            redirect_to('index.php');
         }
-    } elseif ($player = Player::find_by_email($email)) {
-       //
-        if ($player != false && $player->verify_password($password)) {
-            //df($player);
+    } elseif ($player = Player::find_email($email)) {
+
+        if ($player->verify_password($password)) {
             $_SESSION['user_id'] = $player->id;
             $_SESSION['player_id'] = $player->id;
-            redirect_to('index2.php');
+            redirect_to('index.php');
+        } else {
+            echo "nono <br>";
+            dd($player->verify_password($password));
         }
     } else {
         echo "Invalid Email or password";
@@ -41,6 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="content">
+
+    <a href="<?php echo url_for('staff/index.php');
+                ?>"> &laquo;Main Page</a>
 
     <h1>Log in</h1>
     <form action="login.php" method="post">

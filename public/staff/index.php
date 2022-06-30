@@ -1,10 +1,8 @@
 <?php
 session_start();
-
 require_once '../../private/initialize.php';
-$page_title = "Main Page";
 include SHARED_PATH . '/header.php';
-
+$title = "Main Page";
 ?>
 <h1>Home Page</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,7 +21,7 @@ include SHARED_PATH . '/header.php';
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Activities</a>
+                    <a class="nav-link" href="activities.php">Activities</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Our Champions</a>
@@ -77,13 +75,20 @@ include SHARED_PATH . '/header.php';
 
                 <?php endif; ?>
 
-
+                <?php if (isset($_SESSION['user_id'])) :; ?>
                 <a href="<?php echo url_for('staff/players/player.create.php'); ?>">
-                    <button type="button" class="btn btn-primary me-3">
+                    <button type="button" class="btn btn-primary me-3" hidden>
                         Register
                     </button>
                 </a>
 
+                <?php else :; ?>
+                    <a href="<?php echo url_for('staff/players/player.create.php'); ?>">
+                    <button type="button" class="btn btn-primary me-3" >
+                        Register
+                    </button>
+                </a>
+                <?php endif; ?>
                 <?php if (isset($_SESSION['user_id'])) :; ?>
 
                     <a href="<?php echo url_for('staff/logout.php'); ?>">
