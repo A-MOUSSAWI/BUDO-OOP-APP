@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add Admin";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -10,6 +9,8 @@ if (!isset($_SESSION['admin_id'])) {
 
 $form_complete = true;
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
 
 <form action="admin.create.php" method="POST" >
 

@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add Player";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -18,6 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <div>
     <a href="players.list.php">&laquo;Back to players list</a>
 </div>

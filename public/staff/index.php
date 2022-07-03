@@ -1,9 +1,11 @@
 <?php
 session_start();
 require_once '../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Main Page";
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <h1>Home Page</h1>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">

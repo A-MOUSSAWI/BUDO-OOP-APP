@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title ="update";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -27,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $admin = Admin::find_by_id($id); ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
 
 <div id="main">
     <a href="admins.list.php">&laquo;Back to admins list</a>

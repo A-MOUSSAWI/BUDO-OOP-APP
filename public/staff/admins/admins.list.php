@@ -1,9 +1,11 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $page_title = "admin Page";
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <h1>List Of admins </h1>
 <ul>
     <li>

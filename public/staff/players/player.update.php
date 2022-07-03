@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include(SHARED_PATH . '/header.php');
 if (!isset($_SESSION['admin_id'])) {
     header("Location:login.php");
 }
@@ -27,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php $page_title = $player->firstname . " " . $player->lastname;
-include(SHARED_PATH . '/header.php'); 
 ?>
+
+<?php include(SHARED_PATH . '/header.php') ?>
 
 <div id="main">
     <a href="players.list.php">&laquo;Back to players list</a>

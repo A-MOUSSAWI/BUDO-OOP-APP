@@ -1,10 +1,12 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add player";
 $form_complete = true;
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <div>
 	<h1>Add Player</h1>
 	</div>

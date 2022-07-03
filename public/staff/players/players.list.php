@@ -1,9 +1,10 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "player Page";
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
 
 <h1>List Of players </h1>
 <ul>

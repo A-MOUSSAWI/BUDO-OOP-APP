@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include(SHARED_PATH . '/header.php');
 if (!isset($_SESSION['admin_id'])) {
     header("Location:login.php");
 }
@@ -15,14 +14,10 @@ if (!$id) {
 <?php $player = Player::find_by_id($id); ?>
 
 <?php $games = Player::find_games($id);
-
-//var_dump($games);
-// echo count($games);
-// print_r($games);
-// print_r(array_keys($games));
-// echo"</pre>";
 ?>
+
 <?php $page_title = $player->firstname . " " . $player->lastname; ?>
+
 <?php include(SHARED_PATH . '/header.php') ?>
 
 

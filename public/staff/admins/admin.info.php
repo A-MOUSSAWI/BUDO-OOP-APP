@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include(SHARED_PATH . '/header.php');
 
 if (!isset($_SESSION['admin_id'])) {
     header("Location:login.php");
@@ -14,6 +13,8 @@ if (!$id) {
 $admin = Admin::find_by_id($id);
 $title = $admin->firstname . " " . $admin->lastname;
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
 
 <div id="main">
     <a href="admins.list.php">&laquo;Back to admins list</a>
