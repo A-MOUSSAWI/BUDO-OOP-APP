@@ -86,7 +86,7 @@ class ParentClass
 
 	public static function find_email($email)
 	{
-		$sql = "SELECT * FROM " . static::$table_name . " WHERE email = '$email'";
+		$sql = "SELECT * FROM " . static::$table_name . " WHERE email = '$email' LIMIT 1";
 		$statement = self::$db->query($sql);
 		return $statement->fetchObject(static::$class_name);
 	}
