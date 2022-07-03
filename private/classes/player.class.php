@@ -36,7 +36,7 @@ class Player extends ParentClass
 		$last_id = self::$db->lastInsertId();
 		foreach ($this->game as $game_id) {
 			$sql = "INSERT INTO registration (game_id, player_id) VALUES ('$game_id','$last_id')";
-			$sql = self::$db->query($sql);
+			self::$db->query($sql);
 		}
 	}
 
