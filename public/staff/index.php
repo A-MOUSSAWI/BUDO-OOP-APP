@@ -32,15 +32,14 @@ $title = "Main Page";
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
 
-                <?php if (isset($_SESSION['user_id'])) :; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Anouncements</a>
+                        <a class="nav-link" href="#">Announcements</a>
                     </li>
                 <?php endif ?>
 
 
-                <?php if (isset($_SESSION['admin_id'])) :; ?>
-  
+                <?php if (isset($_SESSION['admin_id'])): ?>
                     <div class="dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             Admins Section
@@ -61,14 +60,14 @@ $title = "Main Page";
 
             <div class="d-flex align-items-center">
 
-                <?php if (isset($_SESSION['user_id'])) :; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
                     <a href="<?php echo url_for('staff/login.php'); ?>">
                         <button type="button" class="btn btn-primary me-3" hidden>
                             Login
                         </button>
                     </a>
 
-                <?php else :; ?>
+                <?php else: ?>
                     <a href="<?php echo url_for('staff/login.php'); ?>">
                         <button type="button" class="btn btn-primary me-3">
                             Login
@@ -77,21 +76,21 @@ $title = "Main Page";
 
                 <?php endif ?>
 
-                <?php if (isset($_SESSION['user_id'])) :; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="<?php echo url_for('staff/players/player.create.php'); ?>">
                     <button type="button" class="btn btn-primary me-3" hidden>
                         Register
                     </button>
                 </a>
 
-                <?php else :; ?>
+                <?php else: ?>
                     <a href="<?php echo url_for('staff/players/player.create.php'); ?>">
                     <button type="button" class="btn btn-primary me-3" >
                         Register
                     </button>
                 </a>
                 <?php endif ?>
-                <?php if (isset($_SESSION['user_id'])) :; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
 
                     <a href="<?php echo url_for('staff/logout.php'); ?>">
                         <button type="button" class="btn btn-primary me-3">
