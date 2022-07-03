@@ -30,15 +30,15 @@ $page_title = "admin Page";
         foreach ($admins as $admin) { ?>
 
             <tr>
-                <th scope="row"><?php echo $admin->id; ?></th>
-                <th scope="row"><?php echo $admin->firstname; ?></th>
-                <td><?php echo $admin->lastname; ?></td>
-                <td><?php echo $admin->email; ?></td>
-                <td><a href="admin.info.php?id=<?php echo $admin->id; ?>">View</a></td>
-                <td><a href="admin.delete.php?id=<?php echo $admin->id; ?>">Delete</a></td>
-                <td><a href="admin.update.php?id=<?php echo $admin->id; ?>">Update</a></td>
+                <th scope="row"><?php echo $admin->id ?></th>
+                <th scope="row"><?php echo $admin->firstname ?></th>
+                <td><?php echo $admin->lastname ?></td>
+                <td><?php echo $admin->email ?></td>
+                <td><a href="admin.info.php?id=<?php echo $admin->id ?>">View</a></td>
+                <td><a href="admin.delete.php?id=<?php echo $admin->id ?>">Delete</a></td>
+                <td><a href="admin.update.php?id=<?php echo $admin->id ?>">Update</a></td>
             </tr>
         <?php   } ?>
     </tbody>
 </table>
-<?php include SHARED_PATH . '/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php' ?>

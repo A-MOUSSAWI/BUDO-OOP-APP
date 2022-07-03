@@ -23,7 +23,7 @@ if (!$id) {
 // echo"</pre>";
 ?>
 <?php $page_title = $player->firstname . " " . $player->lastname; ?>
-<?php include(SHARED_PATH . '/header.php'); ?>
+<?php include(SHARED_PATH . '/header.php') ?>
 
 
 <div id="main">
@@ -36,15 +36,15 @@ if (!$id) {
             <br>
             <dl>
                 <dt>First Name</dt>
-                <dd><?php echo $player->firstname; ?></dd>
+                <dd><?php echo $player->firstname ?></dd>
             </dl>
             <dl>
                 <dt>Last Name</dt>
-                <dd><?php echo $player->lastname; ?></dd>
+                <dd><?php echo $player->lastname ?></dd>
             </dl>
             <dl>
                 <dt>Email</dt>
-                <dd><?php echo $player->email; ?></dd>
+                <dd><?php echo $player->email ?></dd>
             </dl>
             <?php
 
@@ -95,4 +95,4 @@ if (!$id) {
 
 </div>
 
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php') ?>

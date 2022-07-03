@@ -34,7 +34,7 @@ $title = "Main Page";
                     <li class="nav-item">
                         <a class="nav-link" href="#">Anouncements</a>
                     </li>
-                <?php endif; ?>
+                <?php endif ?>
 
 
                 <?php if (isset($_SESSION['admin_id'])) :; ?>
@@ -51,7 +51,7 @@ $title = "Main Page";
                             <li> <a class="nav-link" href="<?php echo url_for('staff/players/player.create.php'); ?>">Add Player</a></li>
                         </ul>
                     </div>
-                <?php endif; ?>
+                <?php endif ?>
 
 
             </ul>
@@ -73,7 +73,7 @@ $title = "Main Page";
                         </button>
                     </a>
 
-                <?php endif; ?>
+                <?php endif ?>
 
                 <?php if (isset($_SESSION['user_id'])) :; ?>
                 <a href="<?php echo url_for('staff/players/player.create.php'); ?>">
@@ -88,7 +88,7 @@ $title = "Main Page";
                         Register
                     </button>
                 </a>
-                <?php endif; ?>
+                <?php endif ?>
                 <?php if (isset($_SESSION['user_id'])) :; ?>
 
                     <a href="<?php echo url_for('staff/logout.php'); ?>">
@@ -98,9 +98,9 @@ $title = "Main Page";
                     </a>
 
 
-                <?php endif; ?>
+                <?php endif ?>
             </div>
         </div>
     </div>
 </nav>
-<?php include SHARED_PATH . '/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php' ?>

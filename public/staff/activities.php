@@ -19,4 +19,4 @@ if (!isset($_SESSION['user_id'])) {
     </li>
 </ul>
 
-<?php include SHARED_PATH . '/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php' ?>

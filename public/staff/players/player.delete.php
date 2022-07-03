@@ -25,5 +25,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div>
     <?php echo "Are you sure that you want to remove<strong> $player->firstname $player->lastname </strong>from players list?"; ?>
 </div>
-<form action="player.delete.php?id=<?php echo $id; ?>" method="POST" />
+<form action="player.delete.php?id=<?php echo $id ?>" method="POST" />
 <input type="submit" value="Delete">

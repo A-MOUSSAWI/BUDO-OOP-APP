@@ -23,18 +23,18 @@ $title = $admin->firstname . " " . $admin->lastname;
             <br>
             <dl>
                 <dt>First Name</dt>
-                <dd><?php echo $admin->firstname; ?></dd>
+                <dd><?php echo $admin->firstname ?></dd>
             </dl>
             <dl>
                 <dt>Last Name</dt>
-                <dd><?php echo $admin->lastname; ?></dd>
+                <dd><?php echo $admin->lastname ?></dd>
             </dl>
             <dl>
                 <dt>Email</dt>
-                <dd><?php echo $admin->email; ?></dd>
+                <dd><?php echo $admin->email ?></dd>
             </dl>
         </div>
 
     </div>
 </div>
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php') ?>

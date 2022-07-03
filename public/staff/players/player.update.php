@@ -32,12 +32,12 @@ include(SHARED_PATH . '/header.php');
 
 <div id="main">
     <a href="players.list.php">&laquo;Back to players list</a>
-    <form action="player.update.php?id=<?php echo $id; ?>" method="POST" />
+    <form action="player.update.php?id=<?php echo $id ?>" method="POST" />
 
-    <input type="text" name="firstname" placeholder="firstname" value="<?php echo $player->firstname; ?>"><br>
-    <input type="text" name="lastname" placeholder="lastname" value="<?php echo $player->lastname; ?>"><br>
-    <input type="text" name="email" placeholder="email" value="<?php echo $player->email; ?>"><br>
+    <input type="text" name="firstname" placeholder="firstname" value="<?php echo $player->firstname ?>"><br>
+    <input type="text" name="lastname" placeholder="lastname" value="<?php echo $player->lastname ?>"><br>
+    <input type="text" name="email" placeholder="email" value="<?php echo $player->email ?>"><br>
 
     <input type="submit" value="Update">
 </div>
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php') ?>
