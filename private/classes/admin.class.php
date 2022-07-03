@@ -13,7 +13,6 @@ class Admin extends ParentClass
 	public $lastname;
 	public $email;
 	public $password;
-	public $confirm_password;
 	public $hashed_password;
 
 
