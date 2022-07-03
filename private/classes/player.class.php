@@ -49,10 +49,11 @@ class Player extends ParentClass
 	{
 		$sql = "SELECT games.game_name, registration.date_of_registration
 		FROM registration
-		INNER JOIN games ON registration.game_id=games.id
-		INNER JOIN players ON registration.player_id =players.id where players.id='$id'";
-		$statement = self::$db->query($sql);
-		return  $statement->fetchAll(PDO::FETCH_CLASS);
+		INNER JOIN games ON registration.game_id = games.id
+		INNER JOIN players ON registration.player_id = players.id where players.id='$id'";
 		
+		$statement = self::$db->query($sql);
+		
+		return $statement->fetchAll(PDO::FETCH_CLASS);
 	}
 }
