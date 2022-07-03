@@ -13,7 +13,6 @@ class Player extends ParentClass
 	public $email;
 	public $game;
 	public $password;
-	public $confirm_password;
 	public $hashed_password;
 	public $game_name;
 	public $date_of_registration;
