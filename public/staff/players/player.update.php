@@ -1,15 +1,18 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
+
 if (!isset($_SESSION['admin_id'])) {
     header("Location:login.php");
 }
+
 $id = $_GET['id'];
+
 if (!$id) {
     redirect_to('players.list.php');
 }
-?>
-<?php $player = Player::find_by_id($id);
+
+$player = Player::find_by_id($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $args = [];
@@ -23,9 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         redirect_to("player.info.php?id=" . $id);
     }
 }
-?>
 
-<?php $title = $player->firstname . " " . $player->lastname;
+$title = $player->firstname . " " . $player->lastname;
 ?>
 
 <?php include(SHARED_PATH . '/header.php') ?>

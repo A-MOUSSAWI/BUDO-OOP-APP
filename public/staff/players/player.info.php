@@ -1,19 +1,19 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
+
 if (!isset($_SESSION['admin_id'])) {
     header("Location:login.php");
 }
 
 $id = $_GET['id'];
+
 if (!$id) {
     redirect_to('players.list.php');
 }
-?>
 
-<?php $player = Player::find_by_id($id); ?>
-
-<?php $games = Player::find_games($id);
+$player = Player::find_by_id($id);
+$games = Player::find_games($id);
 ?>
 
 <?php $title = $player->firstname . " " . $player->lastname; ?>
