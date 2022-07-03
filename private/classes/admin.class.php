@@ -23,14 +23,13 @@ class Admin extends ParentClass
 			$this->lastname = $args['lastname'];
 			$this->email = $args['email'];
 
-			$this->hashed_password = password_hash($args['password'] , PASSWORD_BCRYPT);
+			$this->hashed_password = password_hash($args['password'], PASSWORD_BCRYPT);
 		}
 	}
-	
+
 
 	public function create()
 	{
-		
 		return parent::create();
 	}
 
