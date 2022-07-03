@@ -29,11 +29,11 @@ class ParentClass
 
 	static public function check_email_exists($email)
 	{
-		$sql = "SELECT 1 FROM " . static::$table_name . " WHERE email = '$email'";
+		$sql = "SELECT 1 FROM " . static::$table_name . " WHERE email = '$email' LIMIT 1";
 
 		$statement = self::$db->query($sql);
 
-		return $statement->rowCount();
+		return $statement->rowCount() > 0;
 	}
 
 	static public function delete($id)
