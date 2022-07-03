@@ -1,4 +1,5 @@
 <?php
+
 require_once 'parent.class.php';
 
 class Player extends ParentClass

@@ -1,4 +1,5 @@
 <?php
+
 class ParentClass
 {
 	static public $table_name = '';

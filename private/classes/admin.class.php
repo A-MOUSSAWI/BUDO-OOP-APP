@@ -1,5 +1,7 @@
 <?php
+
 require_once 'parent.class.php';
+
 class Admin extends ParentClass
 {
 
