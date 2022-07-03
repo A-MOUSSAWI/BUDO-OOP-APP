@@ -70,8 +70,9 @@ $form_complete = true;
 </div>
 <input type="submit" value="Create">
 
+<?php include SHARED_PATH . '/footer.php' ?>
+
 <?php
-include SHARED_PATH . '/footer.php';
 if ($form_complete && $_SERVER['REQUEST_METHOD'] == 'POST') {
 	$args = [];
 	$args['firstname'] = check_input($_POST['firstname']);
