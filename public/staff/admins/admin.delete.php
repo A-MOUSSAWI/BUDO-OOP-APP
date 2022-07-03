@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div>
     <?php echo "Are you sure that you want to remove<strong> $admin->firstname $admin->lastname </strong>from admins list?"; ?>
 </div>
-<form action="admin.delete.php?id=<?= $id ?>" method="POST" />
+<form action="admin.delete.php?id=<?= $id ?>" method="POST" >
 <input type="submit" value="Delete">
+</form>
 <?php include SHARED_PATH . '/footer.php' ?>

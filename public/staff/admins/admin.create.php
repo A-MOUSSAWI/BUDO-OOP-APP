@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_id'])) {
 $form_complete = true;
 ?>
 
-<form action="admin.create.php" method="POST" />
+<form action="admin.create.php" method="POST" >
 
 <div>
 	<h1>
@@ -69,6 +69,8 @@ $form_complete = true;
 	<label for="confirm_password">Confirm Password</label><input type="password" name="confirm_password" placeholder="Confirm Password" required>
 </div>
 <input type="submit" value="Create">
+
+</form>
 
 <?php include SHARED_PATH . '/footer.php' ?>
 
