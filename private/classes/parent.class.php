@@ -83,10 +83,11 @@ class ParentClass
 		$result = self::$db->query($sql);
 		return $result;
 	}
-	static public function find_email($email){
+
+	public static function find_email($email)
+	{
 		$sql = "SELECT * FROM " . static::$table_name . " WHERE email = '$email'";
-		$statement= self::$db->query($sql);
+		$statement = self::$db->query($sql);
 		return $statement->fetchObject(static::$class_name);
-	
-}
+	}
 }
