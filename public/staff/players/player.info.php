@@ -16,7 +16,7 @@ if (!$id) {
 <?php $games = Player::find_games($id);
 ?>
 
-<?php $page_title = $player->firstname . " " . $player->lastname; ?>
+<?php $title = $player->firstname . " " . $player->lastname; ?>
 
 <?php include(SHARED_PATH . '/header.php') ?>
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-$page_title = "admin Page";
+$title = "admin Page";
 ?>
 
 <?php include SHARED_PATH . '/header.php' ?>

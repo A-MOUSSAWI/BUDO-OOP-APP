@@ -37,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<?php $page_title = 'Log in'; ?>
 
 <?php include(SHARED_PATH . '/header.php') ?>
 
