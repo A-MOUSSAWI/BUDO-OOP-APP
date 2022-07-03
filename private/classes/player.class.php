@@ -14,7 +14,6 @@ class Player extends ParentClass
 	public $game;
 	public $password;
 	public $hashed_password;
-	public $game_name;
 	public $date_of_registration;
 
 
