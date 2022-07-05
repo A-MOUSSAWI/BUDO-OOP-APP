@@ -1,14 +1,15 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "player Page";
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
 
 <h1>List Of players </h1>
 <ul>
     <li>
-        <a href="<?php echo url_for('staff/index.php'); ?>"> &laquo;Main Page</a>
+        <a href="<?php echo url_for('staff/index.php') ?>"> &laquo;Main Page</a>
     </li>
 </ul>
 <table class="table">
@@ -30,15 +31,15 @@ $title = "player Page";
 
         foreach ($players as $player) { ?>
             <tr>
-                <th scope="row"><?php echo $player->id; ?></th>
-                <th scope="row"><?php echo $player->firstname; ?></th>
-                <td><?php echo $player->lastname; ?></td>
-                <td><?php echo $player->email; ?></td>
-                <td><a href="player.info.php?id=<?php echo $player->id; ?>">View</a></td>
-                <td><a href="player.delete.php?id=<?php echo $player->id; ?>">Delete</a></td>
-                <td><a href="player.update.php?id=<?php echo $player->id; ?>">Update</a></td>
+                <th scope="row"><?php echo $player->id ?></th>
+                <th scope="row"><?php echo $player->firstname ?></th>
+                <td><?php echo $player->lastname ?></td>
+                <td><?php echo $player->email ?></td>
+                <td><a href="player.info.php?id=<?php echo $player->id ?>">View</a></td>
+                <td><a href="player.delete.php?id=<?php echo $player->id ?>">Delete</a></td>
+                <td><a href="player.update.php?id=<?php echo $player->id ?>">Update</a></td>
             </tr>
         <?php   } ?>
     </tbody>
 </table>
-<?php include SHARED_PATH . '/footer.php'; ?>
+<?php include SHARED_PATH . '/footer.php' ?>

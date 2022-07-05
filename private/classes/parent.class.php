@@ -1,4 +1,5 @@
 <?php
+
 class ParentClass
 {
 	static public $table_name = '';
@@ -29,11 +30,11 @@ class ParentClass
 
 	static public function check_email_exists($email)
 	{
-		$sql = "SELECT 1 FROM " . static::$table_name . " WHERE email = '$email'";
+		$sql = "SELECT 1 FROM " . static::$table_name . " WHERE email = '$email' LIMIT 1";
 
 		$statement = self::$db->query($sql);
 
-		return $statement->rowCount();
+		return $statement->rowCount() > 0;
 	}
 
 	static public function delete($id)
@@ -83,10 +84,11 @@ class ParentClass
 		$result = self::$db->query($sql);
 		return $result;
 	}
-	static public function find_email($email){
-		$sql = "SELECT * FROM " . static::$table_name . " WHERE email = '$email'";
-		$statement= self::$db->query($sql);
+
+	public static function find_email($email)
+	{
+		$sql = "SELECT * FROM " . static::$table_name . " WHERE email = '$email' LIMIT 1";
+		$statement = self::$db->query($sql);
 		return $statement->fetchObject(static::$class_name);
-	
-}
+	}
 }

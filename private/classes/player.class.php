@@ -1,4 +1,5 @@
 <?php
+
 require_once 'parent.class.php';
 
 class Player extends ParentClass
@@ -12,9 +13,7 @@ class Player extends ParentClass
 	public $email;
 	public $game;
 	public $password;
-	public $confirm_password;
 	public $hashed_password;
-	public $game_name;
 	public $date_of_registration;
 
 
@@ -37,7 +36,7 @@ class Player extends ParentClass
 		$last_id = self::$db->lastInsertId();
 		foreach ($this->game as $game_id) {
 			$sql = "INSERT INTO registration (game_id, player_id) VALUES ('$game_id','$last_id')";
-			$sql = self::$db->query($sql);
+			self::$db->query($sql);
 		}
 	}
 
@@ -50,10 +49,11 @@ class Player extends ParentClass
 	{
 		$sql = "SELECT games.game_name, registration.date_of_registration
 		FROM registration
-		INNER JOIN games ON registration.game_id=games.id
-		INNER JOIN players ON registration.player_id =players.id where players.id='$id'";
-		$statement = self::$db->query($sql);
-		return  $statement->fetchAll(PDO::FETCH_CLASS);
+		INNER JOIN games ON registration.game_id = games.id
+		INNER JOIN players ON registration.player_id = players.id where players.id='$id'";
 		
+		$statement = self::$db->query($sql);
+		
+		return $statement->fetchAll(PDO::FETCH_CLASS);
 	}
 }

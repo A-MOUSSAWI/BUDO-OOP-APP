@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add Admin";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -11,7 +10,9 @@ if (!isset($_SESSION['admin_id'])) {
 $form_complete = true;
 ?>
 
-<form action="admin.create.php" method="POST" />
+<?php include SHARED_PATH . '/header.php' ?>
+
+<form action="admin.create.php" method="POST" >
 
 <div>
 	<h1>
@@ -70,35 +71,34 @@ $form_complete = true;
 </div>
 <input type="submit" value="Create">
 
+</form>
+
+<?php include SHARED_PATH . '/footer.php' ?>
+
 <?php
-include SHARED_PATH . '/footer.php';
-if ($form_complete) {
+if ($form_complete && $_SERVER['REQUEST_METHOD'] == 'POST') {
+	$args = [];
+	$args['firstname'] = check_input($_POST['firstname']);
+	$args['lastname'] = check_input($_POST['lastname']);
 
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-		$args = [];
-		$args['firstname'] = check_input($_POST['firstname']);
-		$args['lastname'] = check_input($_POST['lastname']);
-
-		if ($admin = Admin::check_email_exists($_POST['email'])) {
-			echo "<p class='alert'>Email is already exists</p>";
-			dd($admin);
-		} elseif (filter_var(check_input($_POST['email']), FILTER_VALIDATE_EMAIL) == TRUE) {
-			$args['email'] = filter_var(check_input($_POST['email']), FILTER_VALIDATE_EMAIL);
-		} else {
-			echo "<p class='alert'>Email format is incorrect!!</p>";
-			exit();
-		}
-
-		$args['password'] =  $_POST['password'];
-
-		$args['confirm_password'] = $_POST['confirm_password'];
-
-		if ($args['password'] !== $args['confirm_password']) {
-			echo "<p class=\"alert\">Password doesn't confirm</p>";
-			exit();
-		}
-		$admin = new Admin($args);
-		$result = $admin->create();
+	if ($admin = Admin::check_email_exists($_POST['email'])) {
+		echo "<p class='alert'>Email is already exists</p>";
+		dd($admin);
+	} elseif (filter_var(check_input($_POST['email']), FILTER_VALIDATE_EMAIL) == TRUE) {
+		$args['email'] = filter_var(check_input($_POST['email']), FILTER_VALIDATE_EMAIL);
+	} else {
+		echo "<p class='alert'>Email format is incorrect!!</p>";
+		exit();
 	}
+
+	$args['password'] =  $_POST['password'];
+
+	$args['confirm_password'] = $_POST['confirm_password'];
+
+	if ($args['password'] !== $args['confirm_password']) {
+		echo "<p class=\"alert\">Password doesn't confirm</p>";
+		exit();
+	}
+	$admin = new Admin($args);
+	$result = $admin->create();
 }
-?>

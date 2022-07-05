@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title ="update";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -28,17 +27,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $admin = Admin::find_by_id($id); ?>
 
+<?php include SHARED_PATH . '/header.php' ?>
+
 <div id="main">
     <a href="admins.list.php">&laquo;Back to admins list</a>
-    <form action="admin.update.php?id=<?php echo $id; ?>" method="POST" />
+    <form action="admin.update.php?id=<?php echo $id ?>" method="POST" >
     <label for="firstname">Firstname</label>
-    <input type="text" name="firstname" placeholder="firstname" value="<?php echo $admin->firstname; ?>"><br>
+    <input type="text" name="firstname" placeholder="firstname" value="<?php echo $admin->firstname ?>"><br>
     <label for="firstname">Lastname</label>
-    <input type="text" name="lastname" placeholder="lastname" value="<?php echo $admin->lastname; ?>"><br>
+    <input type="text" name="lastname" placeholder="lastname" value="<?php echo $admin->lastname ?>"><br>
     <label for="firstname">Email</label>
-    <input type="text" name="email" placeholder="email" value="<?php echo $admin->email; ?>"><br>
+    <input type="text" name="email" placeholder="email" value="<?php echo $admin->email ?>"><br>
 
     <input type="submit" value="Update">
+    </form>
 </div>
 
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php') ?>

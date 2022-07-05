@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add admin";
 
 if (!isset($_SESSION['admin_id'])) {
@@ -18,6 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <div>
     <a href="admins.list.php">&laquo;Back to admins list</a>
 </div>
@@ -25,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div>
     <?php echo "Are you sure that you want to remove<strong> $admin->firstname $admin->lastname </strong>from admins list?"; ?>
 </div>
-<form action="admin.delete.php?id= <?= $id; ?>" method="POST" />
+<form action="admin.delete.php?id=<?= $id ?>" method="POST" >
 <input type="submit" value="Delete">
-<?php include SHARED_PATH . '/footer.php'; ?>
+</form>
+<?php include SHARED_PATH . '/footer.php' ?>

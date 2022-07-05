@@ -1,17 +1,19 @@
 <?php
 session_start();
 require_once '../../../private/initialize.php';
-include SHARED_PATH . '/header.php';
 $title = "Add player";
 $form_complete = true;
 ?>
+
+<?php include SHARED_PATH . '/header.php' ?>
+
 <div>
 	<h1>Add Player</h1>
 	</div>
 <a href="<?php echo url_for('staff/players/players.list.php'); ?>">&laquo;List Page</a>
 <div>
 </div>
-<form action="player.create.php" method="POST" />
+<form action="player.create.php" method="POST" >
 <div>
 	<?php
 	if (isset($_POST['firstname']) && empty(trim($_POST['firstname']))) {
@@ -73,6 +75,7 @@ $form_complete = true;
 </div>
 
 <input type="submit" value="Create">
+</form>
 
 <?php include SHARED_PATH . '/footer.php';
 if ($form_complete) {

@@ -1,5 +1,7 @@
 <?php
+
 require_once 'parent.class.php';
+
 class Admin extends ParentClass
 {
 
@@ -11,7 +13,6 @@ class Admin extends ParentClass
 	public $lastname;
 	public $email;
 	public $password;
-	public $confirm_password;
 	public $hashed_password;
 
 
@@ -22,14 +23,13 @@ class Admin extends ParentClass
 			$this->lastname = $args['lastname'];
 			$this->email = $args['email'];
 
-			$this->hashed_password = password_hash($args['password'] , PASSWORD_BCRYPT);
+			$this->hashed_password = password_hash($args['password'], PASSWORD_BCRYPT);
 		}
 	}
-	
+
 
 	public function create()
 	{
-		
 		return parent::create();
 	}
 

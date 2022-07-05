@@ -1,7 +1,5 @@
 <?php
 
-
-
 function db_conn()
 {
     $host = 'localhost';
@@ -9,17 +7,8 @@ function db_conn()
     $user = 'root';
     $password = '';
 
-    $conn = "mysql:host=$host;dbname=$dbname;charset=UTF8";
-    $conn = new PDO($conn, $user, $password);
-    return $conn;
-   
-    try {
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        if (!$conn) {
-            echo "CONNECTION FAILED...........";
-        }
-    } catch (PDOexception $excep_error) {
-        echo $excep_error->getMessage();
-    }
-}
+    $connectionString = "mysql:host=$host;dbname=$dbname;charset=UTF8";
+    $connection = new PDO($connectionString, $user, $password);
 
+    return $connection;
+}

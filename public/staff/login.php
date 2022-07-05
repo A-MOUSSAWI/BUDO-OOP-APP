@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once('../../private/initialize.php');
-include(SHARED_PATH . '/header.php');
 
 $title= "LogIn";
 $email = '';
@@ -29,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['player_id'] = $player->id;
             redirect_to('index.php');
         } else {
-            echo "nono <br>";
-            dd($player->verify_password($password));
+            echo "nono <br>";           
         }
     } else {
         echo "Invalid Email or password";
@@ -38,13 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<?php $page_title = 'Log in'; ?>
-<?php include(SHARED_PATH . '/header.php'); ?>
+
+<?php include(SHARED_PATH . '/header.php') ?>
 
 <div id="content">
 
-    <a href="<?php echo url_for('staff/index.php');
-                ?>"> &laquo;Main Page</a>
+    <a href="<?php echo url_for('staff/index.php') ?>">&laquo;Main Page</a>
 
     <h1>Log in</h1>
     <form action="login.php" method="post">
@@ -56,4 +53,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </div>
 
-<?php include(SHARED_PATH . '/footer.php'); ?>
+<?php include(SHARED_PATH . '/footer.php') ?>
